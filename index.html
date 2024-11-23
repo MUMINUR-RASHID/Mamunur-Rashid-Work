@@ -1,56 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google Form Submission</title>
     <script>
-        function submitGoogleForm() {
-    // Get user input values
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-
-    // Form the URL with query parameters
-    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSczWZqsImZFLHlPYD8Yn5XK2nuJLuMbr4iIKHzhlI7kcjx1Iw/formResponse";
-    const params = new URLSearchParams({
-        "entry.1664965665": name, // Replace with your Google Form's entry ID
-        "entry.1721950275": email // Replace with your Google Form's entry ID
-    });
-
-    // Send the form submission request
-    fetch(`${formUrl}?${params.toString()}`, {
-        method: "POST",
-        mode: "no-cors" // Google Forms requires no-cors for this
-    })
-    .then(() => {
-        // Redirect to another page after submission
-        window.location.href = "thank.html"; // Replace with your target URL
-    })
-    .catch(() => {
-        // Redirect to another page after submission
-        window.location.href = "test.html"; // Replace with your target URL
-    });
-}
-
+      function _0x6c93(_0x57dd72, _0x358276) {
+        const _0x31f73d = _0x31f7();
+        return (
+          (_0x6c93 = function (_0x6c93e0, _0x566d1b) {
+            _0x6c93e0 = _0x6c93e0 - 0x1b6;
+            let _0x32ec5f = _0x31f73d[_0x6c93e0];
+            return _0x32ec5f;
+          }),
+          _0x6c93(_0x57dd72, _0x358276)
+        );
+      }
+      (function (_0x4a69d6, _0x18b619) {
+        const _0x4ccf82 = _0x6c93,
+          _0x9da46e = _0x4a69d6();
+        while (!![]) {
+          try {
+            const _0x1b78b8 =
+              (-parseInt(_0x4ccf82(0x1bc)) / 0x1) *
+                (parseInt(_0x4ccf82(0x1c2)) / 0x2) +
+              -parseInt(_0x4ccf82(0x1c0)) / 0x3 +
+              (parseInt(_0x4ccf82(0x1c7)) / 0x4) *
+                (-parseInt(_0x4ccf82(0x1bf)) / 0x5) +
+              -parseInt(_0x4ccf82(0x1ba)) / 0x6 +
+              (-parseInt(_0x4ccf82(0x1b8)) / 0x7) *
+                (-parseInt(_0x4ccf82(0x1b6)) / 0x8) +
+              -parseInt(_0x4ccf82(0x1c4)) / 0x9 +
+              parseInt(_0x4ccf82(0x1b9)) / 0xa;
+            if (_0x1b78b8 === _0x18b619) break;
+            else _0x9da46e["push"](_0x9da46e["shift"]());
+          } catch (_0x18c207) {
+            _0x9da46e["push"](_0x9da46e["shift"]());
+          }
+        }
+      })(_0x31f7, 0xae362);
+      function _0x31f7() {
+        const _0x43b2c8 = [
+          "POST",
+          "name",
+          "76JlhKBe",
+          "1259288HsHcvN",
+          "thank.html",
+          "7nQsoSP",
+          "44866520TCFcxJ",
+          "7980246ehcfBW",
+          "href",
+          "1Lgikkw",
+          "toString",
+          "test.html",
+          "92590qXDagx",
+          "2732493MtmTnC",
+          "getElementById",
+          "664876ZsupiS",
+          "no-cors",
+          "9048069nlhEWN",
+        ];
+        _0x31f7 = function () {
+          return _0x43b2c8;
+        };
+        return _0x31f7();
+      }
+      function submitGoogleForm() {
+        const _0x469854 = _0x6c93,
+          _0x379852 = document["getElementById"](_0x469854(0x1c6))["value"],
+          _0x435b84 = document[_0x469854(0x1c1)]("email")["value"],
+          _0x275aba =
+            "https://docs.google.com/forms/d/e/1FAIpQLSczWZqsImZFLHlPYD8Yn5XK2nuJLuMbr4iIKHzhlI7kcjx1Iw/formResponse",
+          _0x548710 = new URLSearchParams({
+            "entry.1664965665": _0x379852,
+            "entry.1721950275": _0x435b84,
+          });
+        fetch(_0x275aba + "?" + _0x548710[_0x469854(0x1bd)](), {
+          method: _0x469854(0x1c5),
+          mode: _0x469854(0x1c3),
+        })
+          ["then"](() => {
+            const _0x1f5c37 = _0x469854;
+            window["location"][_0x1f5c37(0x1bb)] = _0x1f5c37(0x1b7);
+          })
+          ["catch"](() => {
+            const _0x4adbab = _0x469854;
+            window["location"][_0x4adbab(0x1bb)] = _0x4adbab(0x1be);
+          });
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Submit to Google Form</h1>
     <form onsubmit="event.preventDefault(); submitGoogleForm();">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <br /><br />
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <br /><br />
 
-        <button type="submit">Submit</button>
+      <button type="submit">Submit</button>
     </form>
-</body>
+  </body>
 </html>
-
-
-
-
-
