@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Form Submission</title>
+    <script>
+        function submitGoogleForm() {
+    // Get user input values
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    // Form the URL with query parameters
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSczWZqsImZFLHlPYD8Yn5XK2nuJLuMbr4iIKHzhlI7kcjx1Iw/formResponse";
+    const params = new URLSearchParams({
+        "entry.1664965665": name, // Replace with your Google Form's entry ID
+        "entry.1721950275": email // Replace with your Google Form's entry ID
+    });
+
+    // Send the form submission request
+    fetch(`${formUrl}?${params.toString()}`, {
+        method: "POST",
+        mode: "no-cors" // Google Forms requires no-cors for this
+    })
+    .then(() => {
+        // Redirect to another page after submission
+        window.location.href = "thank.html"; // Replace with your target URL
+    })
+    .catch(() => {
+        // Redirect to another page after submission
+        window.location.href = "test.html"; // Replace with your target URL
+    });
+}
+
+    </script>
+</head>
+<body>
+    <h1>Submit to Google Form</h1>
+    <form onsubmit="event.preventDefault(); submitGoogleForm();">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
